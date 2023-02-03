@@ -1,0 +1,25 @@
+Name: Vincent Gilliam
+VUnetID: gilliava
+Email: vincent.a.gilliam@vanderbilt.edu
+Class: CS 3270 - Vanderbilt University
+Date: 9/14/22
+Honor statement: I have neither given nor received unauthorized help on this assignment.
+
+
+Derivation for Exercise 3:
+<syntax>
+-> <rule>
+-> <non_term> "->" <option>
+-> "<" <non_term_name> ">" "->" <option>
+-> "<" "factor" ">" "->" <option>
+-> "<" "factor" ">" "->" <unit> "|" <option>
+-> "<" "factor" ">" "->" <non_term> "|" <option>
+-> "<" "factor" ">" "->" "<" <non_term_name> ">" "|" <option>
+-> "<" "factor" ">" "->" "<" "ident" ">" "|" <option>
+-> "<" "factor" ">" "->" "<" "ident" ">" "|" <unit> "|" <option>
+-> "<" "factor" ">" "->" "<" "ident" ">" "|" "const" "|" <option>
+-> "<" "factor" ">" "->" "<" "ident" ">" "|" "const" "|" <unit>
+-> "<" "factor" ">" "->" "<" "ident" ">" "|" "const" "|" "(" <unit> ")"
+-> "<" "factor" ">" "->" "<" "ident" ">" "|" "const" "|" "(" <non_term> ")"
+-> "<" "factor" ">" "->" "<" "ident" ">" "|" "const" "|" "(" "<" <non_term_name> ">" ")"
+-> "<" "factor" ">" "->" "<" "ident" ">" "|" "const" "|" "(" "<" "expr" ">" ")"

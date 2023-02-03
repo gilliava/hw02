@@ -1,0 +1,62 @@
+// Name: Vincent Gilliam
+// VUnetID: gilliava
+// Email:vincent.a.gilliam@vanderbilt.edu
+// Class: CS 3270 - Vanderbilt University
+// Date: 9/14/22
+// Honor statement: I have neither given nor received unauthorized help on this assignment.
+
+graph ParseTree {
+    // Shape set to "none" to suppress any shape drawings on the nodes.
+        // Ordering set to "out" to make the ordering of the nodes the same has
+        // they are defined in the graph definition.
+        // LEAVE AS-IS.
+        node [shape = none, ordering = out];
+
+        // Text labels.
+        stmts1, stmts2[label = <stmts>]
+        stmt1, stmt2, stmt3 [label = <stmt>]
+        cond1, cond2[label = <condition>]
+        var1, var2, var3, var4, var5[label = <var>]
+        expr1[label = <expr>]
+        term1, term2, term3, term4, term5, term6[label = <term>]
+        num1, num2, num3, num4[label = <num>]
+        rel_op1, rel_op2[label = <rel_op>]
+        y1,y2,y3,y4,y5[label = y]
+        eq1, eq2[label = "="]
+        five1, five2[label = 5]
+        parenLeft1, parenLeft2[label = "("]
+        parenRight1, parenRight2[label = ")"]
+
+        // Graph definition.
+        <program> -- begin, stmts1, end;
+        stmts1 -- stmt1, stmts2;
+        stmts2 -- <if_stmt>;
+        <if_stmt> -- if, parenLeft1,cond1, parenRight1, stmt2;
+        stmt2 -- <while_loop>;
+        <while_loop> -- while, parenLeft2, cond2,  parenRight2, stmt3;
+        stmt3 -- <assign_stmt>;
+        <assign_stmt> -- var1, eq1, expr1;
+        expr1 -- term1, "-", term2;
+        term2 -- num1;
+        num1 -- 2;
+        term1 -- var2;
+        var2 -- y1;
+        var1 -- y2;
+        cond2 -- term3, rel_op1, term4;
+        term4 -- num2;
+        num2 -- 0;
+        rel_op1 -- ">";
+        term3 -- var3;
+        var3 -- y3;
+        cond1 -- term5, rel_op2, term6;
+        term6 -- num3;
+        num3 -- five1;
+        rel_op2 -- "==";
+        term5 -- var4;
+        var4 -- y4;
+        stmt1 -- <decl_stmt>;
+        <decl_stmt> -- <type>, var5, eq2, num4;
+        num4 -- five2;
+        var5 -- y5;
+        <type> -- int;
+}

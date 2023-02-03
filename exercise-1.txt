@@ -1,0 +1,40 @@
+Name: Vincent Gilliam
+VUnetID: gilliava
+Email: vincent.a.gilliam@vanderbilt.edu
+Class: CS 3270 - Vanderbilt University
+Date: 9/11/22
+Honor statement: I have neither given nor received unauthorized help on this assignment.
+
+Derivation for Exercise 1:
+
+<program> -> begin <stmts> end
+-> <stmt> <stmts>
+-> <stmt> <if_stmt>
+-> <stmt> if (<condition>) <stmt>
+-> <stmt> if (<condition>) <while_loop>
+-> <stmt> if (<condition>) while ( <condition> ) <stmt>
+-> <stmt> if (<condition>) while ( <condition> ) <assign_stmt>
+-> <stmt> if (<condition>) while ( <condition> ) <var> = <expr>
+-> <stmt> if (<condition>) while ( <condition> ) <var> = <term> - <term>
+-> <stmt> if (<condition>) while ( <condition> ) <var> = <term> - <num>
+-> <stmt> if (<condition>) while ( <condition> ) <var> = <term> - 2
+-> <stmt> if (<condition>) while ( <condition> ) <var> = <var> - 2
+-> <stmt> if (<condition>) while ( <condition> ) <var> = y - 2
+-> <stmt> if (<condition>) while ( <condition> ) y = y - 2
+-> <stmt> if (<condition>) while ( <term> <rel_op> <term>) y = y - 2
+-> <stmt> if (<condition>) while ( <term> <rel_op> <num>) y = y - 2
+-> <stmt> if (<condition>) while ( <term> <rel_op> 0) y = y - 2
+-> <stmt> if (<condition>) while ( <term> > 0) y = y - 2
+-> <stmt> if (<condition>) while ( <var> > 0) y = y - 2
+-> <stmt> if (<condition>) while ( y > 0) y = y - 2
+-> <stmt> if (<term> <rel_op> <term>) while ( y > 0) y = y - 2
+-> <stmt> if (<term> <rel_op> <num>) while ( y > 0) y = y - 2
+-> <stmt> if (<term> <rel_op> 5) while ( y > 0) y = y - 2
+-> <stmt> if (<term> == 5) while ( y > 0) y = y - 2
+-> <stmt> if (<var> == 5) while ( y > 0) y = y - 2
+-> <stmt> if (y == 5) while ( y > 0) y = y - 2
+-> <decl_stmt> if (y == 5) while ( y > 0) y = y - 2
+-> <type> <var> = <num> if (y == 5) while ( y > 0) y = y - 2
+-> <type> <var> = 5 if (y == 5) while ( y > 0) y = y - 2
+-> <type> y = 5 if (y == 5) while ( y > 0) y = y - 2
+-> int y = 5 if (y == 5) while ( y > 0) y = y - 2

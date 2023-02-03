@@ -1,0 +1,41 @@
+Name: Vincent Gilliam
+VUnetID: gilliava
+Email: vincent.a.gilliam@vanderbilt.edu
+Class: CS 3270 - Vanderbilt University
+Date: 9/16/22
+Honor statement: I have neither given nor received unauthorized help on this assignment.
+
+graph ParseTree {
+    // Shape set to "none" to suppress any shape drawings on the nodes.
+    // Ordering set to "out" to make the ordering of the nodes the same has
+    // they are defined in the graph definition.
+    // LEAVE AS-IS.
+    node [shape = none, ordering = out];
+    
+    // Text labels.
+    arrow1[label = "->"]
+    non_term1, non_term2, non_term3[label = <non_term>]
+    option1, option2, option3[label = <option>]
+    leftcar1,  leftcar12,  leftcar13[label = "<"]
+    rightcar1, rightcar2, rightcar3[label = ">"]
+    bar1, bar2[label = "|"]
+    unit1, unit2, unit3, unit4[label = <unit>]
+    non_term_name1, non_term_name2, non_term_name3[label = <non_term_name>]
+    // Graph definition.
+    <syntax> -- <rule>;
+    <rule> -- non_term1, arrow1, option1;
+    non_term1 --  leftcar1, non_term_name1,rightcar1;
+    non_term_name1 -- "factor";
+    option1 -- unit1, bar1, option2;
+    unit1 -- non_term2;
+    non_term2 --  leftcar12, non_term_name2, rightcar2;
+    non_term_name2 -- "ident";
+    option2 -- unit2, bar2, option3;
+     unit2 -- "const";
+     option3 -- unit3;
+     unit3 -- "(", unit4, ")";
+     unit4 -- non_term3;
+     non_term3 --  leftcar13, non_term_name3, rightcar3;
+     non_term_name3 -- "expr";
+     
+}

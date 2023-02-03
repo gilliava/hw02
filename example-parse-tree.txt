@@ -1,0 +1,28 @@
+// CS 3270 instructor
+// Vanderbilt University
+
+graph ParseTree {
+    // Shape set to "none" to suppress any shape drawings on the nodes.
+    // Ordering set to "out" to make the ordering of the nodes the same has
+    // they are defined in the graph definition.
+    // LEAVE AS-IS.
+    node [shape = none, ordering = out];
+    
+    // Specifying text labels for the nodes.
+    // Nodes with identical text labels must still have different names (e.g.,
+    // var1 and var2). If not, then the edges will point to the same node.
+    var1, var2, var3 [label = "<var>"];
+    a1, a2 [label = "A"];
+
+    // Graph definition.
+    // When a parent node connects to multiple child nodes, each connection
+    // must be defined separately (e.g., "stmt" connects to "var1", "equal",
+    // and "expr").
+    "<program>" -- begin, "<stmt_lst>", end;
+    "<stmt_lst>" -- "<stmt>";
+    "<stmt>" -- var1, "=", "<expr>";
+    var1 -- a1;
+    "<expr>" -- var2, "+", var3;
+    var2 -- a2;
+    var3 -- B;
+}
